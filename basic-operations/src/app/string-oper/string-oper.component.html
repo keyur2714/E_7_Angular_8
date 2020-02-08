@@ -1,0 +1,18 @@
+<div class="row form-group">
+    <div class="col-sm-4">Enter Any String: </div>
+    <div class="col-sm-4">
+        <input type="text" name=str class="form-control" #str (blur)="check(str.value)">
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+        <button class="btn btn-info m-1" (click)="toUpper(str.value)">ToUpper</button>
+        <button class="btn btn-success m-1" (click)="toLower(str.value)">ToLower</button>
+        <button class="btn btn-danger m-1" (click)="toReverse(str.value)">ToReverse</button>
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+        Result String is : {{result}}
+    </div>
+</div>

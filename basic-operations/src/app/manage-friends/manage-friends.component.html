@@ -1,0 +1,42 @@
+<div class="row form-group">
+    <div class="col-sm-4">
+        Name :
+    </div>
+    <div class="col-sm-4">
+        <!-- <input type="text" #name class="form-control" name=name /> -->
+        <input type="text" name=name [(ngModel)]="name" class="form-control" />
+        <!-- {{name}} -->
+    </div>
+    <div class="col-sm-4">
+        <!-- <button class="btn btn-info" (click)="add(name.value)">Add</button> -->
+        <button class="btn btn-info" (click)="add()" *ngIf="updateIdx === -1">Add</button>
+        <button class="btn btn-info" (click)="update()" *ngIf="updateIdx !== -1">Update</button>
+
+    </div>
+</div>
+<div class="row form-group">
+    <div class="col">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>        
+            </thead>
+            <tbody>
+                <tr *ngFor="let name of friends;let i=index;" (click)="setSelected(name)" [class.selected]="name === selectedName">
+                    <td>{{name}}</td>
+                    <td>
+                        <button class="btn btn-success m-1" (click)="edit(i)">Edit</button>
+                        <button class="btn btn-danger m-1" (click)="delete(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row form-group" *ngIf="selectedName !== ''">
+    <div class="col">
+        Selected Name is : {{selectedName}}
+    </div>
+</div>
