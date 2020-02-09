@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <app-header
+        [menuItems]="menuItems"
+      >        
+      </app-header>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <app-message></app-message>
+    </div>
+    <div class="col">
+      <app-message
+        [message]="'Good Morninig...!'"
+        [message-type]="'danger'"
+      >        
+      </app-message>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <input type="text" #str [ngClass]="'form-control'" name=str (blur)="search(str.value)">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <!-- <app-personal-info
+        [name]="'denish'"
+        [city]="'mumbai'"
+        [mobileNo]="'7387029671'"
+        [email]="'denishjava_hp@gmail.com'"
+        [backgroud-color]="'info'"
+        [text-color]="'dark'"
+      >        
+      </app-personal-info> -->
+      <app-personal-info
+        [name]="person.name"
+        [city]="person.city"
+        [mobileNo]="person.mobileNo"
+        [email]="person.email"
+        [age]="person.age"
+        [backgroud-color]="'info'"
+        [text-color]="'dark'"
+      >        
+      </app-personal-info>
+    </div>
+  </div>
+</div>
