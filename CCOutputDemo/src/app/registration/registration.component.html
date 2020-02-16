@@ -1,31 +1,29 @@
 <div class="row form-group">
-    <div class="col-sm-4">
-        State :
-    </div>
-    <div class="col-sm-4">
-        <app-my-drop-down
-        [name]="'state'"
-        [dataList]="stateList"
-        [selectedItem]="selectedState"
-        (getSelectedItem)="getState($event)"
-        ></app-my-drop-down>
-    </div>
+    <div class="col-sm-8">
+            <app-my-drop-down
+            [name]="'state'"
+            [dataList]="stateList"
+            [selectedItem]="selectedState"
+            (getSelectedItem)="getState($event)"
+        >
+        State
+        </app-my-drop-down>
+    </div>    
     <div class="col-sm-4">
         {{selectedState.desc}}
     </div>
 </div>
 <div class="row form-group">
-    <div class="col-sm-4">
-        City :
-    </div>
-    <div class="col-sm-4">
+    <div class="col-sm-8">
         <app-my-drop-down
-        [name]="'city'"
-        [dataList]="cityList"
-        [selectedItem]="selectedCity"
-        (getSelectedItem)="getCity($event)"
-        ></app-my-drop-down>
-    </div>
+            [name]="'city'"
+            [dataList]="cityList"
+            [selectedItem]="selectedCity"
+            (getSelectedItem)="getCity($event)"
+        >
+        City
+        </app-my-drop-down>    
+    </div>    
     <div class="col-sm-4">
         {{selectedCity.desc}}
     </div>
