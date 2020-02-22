@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" app-my-directive>
+    <div class="col">
+        <h1 app-my-directive>{{title}}</h1>
+    </div>  
+    <div class="col">
+      Change Color:
+      <select name="chColor" class="form-control" #chColor (change)="changeStyle()">
+        <option value="-1">-:Select Color:-</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+      </select>
+    </div>
+    <div class="col">
+      <input type="text" #str name=str class="form-control" appMyStyle [color]="'blue'" [bg-color]="'orange'" [font-size]="fontSize">
+    </div>  
+  </div>
+</div>
