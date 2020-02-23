@@ -1,0 +1,104 @@
+<div class="card">
+    <div class="card-header bg-warning">
+        Registration Entry
+    </div>
+    <div class="card-body">
+        <form #f=ngForm (ngSubmit)="save(f)">
+            <div class="row form-group">
+                <div class="col-sm-2">
+                    <sup>*</sup>Id : 
+                </div>
+                <div class="col-sm-4">
+                    <input type="number" name=id required class="form-control" [(ngModel)]="registration.id" #id=ngModel/>
+                </div>
+                <div class="col-sm-4" *ngIf="id.invalid && id.touched">
+                    Id is requred Field.
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2"><sup>*</sup>Name :</div>
+                <div class="col-sm-4">
+                    <input type="text" name=name required minlength="3" class="form-control" pattern="^[a-zA-Z]+$" [(ngModel)]="registration.name" #name=ngModel>
+                </div>
+                <div class="col-sm-4" *ngIf="name.invalid && name.touched">
+                    <div *ngIf="name.errors['required']">
+                        Name is Required Fieldd.        
+                    </div>
+                    <div *ngIf="name.errors['minlength']">
+                        Name is Minimum 3 Character.
+                    </div>
+                    <div *ngIf="name.errors['pattern']">
+                        Name is Invalid,Only Alphabets allowed in name.        
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2"><sup>*</sup>Mobile No :</div>
+                <div class="col-sm-4">
+                    <input type="text" name=mobileNo required minlength="10" maxlength="10" class="form-control" pattern="^[0-9]+$" [(ngModel)]="registration.mobileNo" #mobileNo=ngModel>
+                </div>
+                <div class="col-sm-4" *ngIf="mobileNo.invalid && mobileNo.touched">
+                    <div *ngIf="mobileNo.errors['required']">
+                        MobileNo is Required Fieldd.        
+                    </div>
+                    <div *ngIf="mobileNo.errors['minlength']">
+                        MobileNo is Minimum 10 Character.
+                    </div>
+                    <div *ngIf="mobileNo.errors['pattern']">
+                        MobileNo is Invalid,Only Digits allowed in name.        
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2"><sup>*</sup>Email :</div>
+                <div class="col-sm-4">
+                    <input type="text" name=email required email class="form-control" [(ngModel)]="registration.email" #email=ngModel>
+                </div>
+                <div class="col-sm-4" *ngIf="email.invalid && email.touched">
+                    <div *ngIf="email.errors['required']">
+                        Email is Required Fieldd.        
+                    </div>
+                    <div *ngIf="email.errors['email']">
+                        Invalid Email Address.
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2">Gender :</div>
+                <div class="col-sm-4">
+                    <input type="radio" name=gender value=M class="radio-inline" [(ngModel)]="registration.gender">Male
+                    <input type="radio" name=gender value=F class="radio-inline" [(ngModel)]="registration.gender">FeMale
+                </div>
+            </div>    
+            <div class="row form-group">
+                <div class="col-sm-2">Course: </div>
+                <div class="col-sm-4">
+                    <select name="course" class="form-control" [(ngModel)]="registration.course">
+                        <option value="-1">-:Select Course:-</option>
+                        <option *ngFor="let course of courseList" [ngValue]="course">
+                            {{course.courseName}}
+                        </option>    
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-2">Address :</div>
+                <div class="col-sm-4">
+                    <textarea name="address" cols="50" rows="5" [(ngModel)]="registration.address">                        
+                    </textarea>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-sm-4">
+                    <button class="btn btn-success" [disabled]="f.invalid">Save</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+<div class="row" *ngIf="isSubmitted">
+    <div class="col">
+        <app-registration-detail [registration]="registration"></app-registration-detail>
+    </div>
+</div>
