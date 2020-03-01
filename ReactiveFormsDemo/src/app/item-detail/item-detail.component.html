@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header bg-success">
+        Item # {{item.id}}
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                    <img src="../../assets/item-images/{{item.code}}.jpg" alt="{{item.name}}" width="100px" height="100px"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">{{item.price}}</div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li *ngFor="let ing of item.ingredients">
+                        {{ing}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

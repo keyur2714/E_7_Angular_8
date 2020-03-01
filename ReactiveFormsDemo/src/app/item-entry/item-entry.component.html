@@ -1,0 +1,61 @@
+<form [formGroup]="itemEntryForm" (ngSubmit)="save()">
+    <div class="row form-group">
+        <div class="col-sm-4"><sup>*</sup>Id :</div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'id'" class="form-control"/>
+        </div>
+        <div class="col-sm-4" *ngIf="itemEntryForm.get('id').invalid && itemEntryForm.get('id').touched">
+            Id is Mandatory Field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4"><sup>*</sup>Code :</div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'code'" class="form-control"/>
+        </div>
+        <div class="col-sm-4" *ngIf="itemEntryForm.get('code').invalid && itemEntryForm.get('code').touched">
+            <div *ngIf="itemEntryForm.get('code').errors['required']">Code is Mandatory Field.</div>
+            <div *ngIf="itemEntryForm.get('code').errors['minlength']">Code is min 3 character.</div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4"><sup>*</sup>Desc :</div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'name'" class="form-control"/>
+        </div>
+        <div class="col-sm-4" *ngIf="itemEntryForm.get('name').invalid && itemEntryForm.get('name').touched">
+            Name is Mandatory Field.
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4"><sup>*</sup>Price :</div>
+        <div class="col-sm-4">
+            <input type="text" [formControlName]="'price'" class="form-control"/>
+        </div>
+        <div class="col-sm-4" *ngIf="itemEntryForm.get('name').invalid && itemEntryForm.get('name').touched">
+            Price is Mandatory Field.
+        </div>
+    </div>
+    <div formArrayName="ingredients">
+        <div class="row form-group" *ngFor="let control of itemEntryForm.get('ingredients').controls;let i=index">            
+            <div class="col-sm-4">
+                Ingredients {{i+1}}:
+            </div>
+            <div class="col-sm-4">
+                <input type="text" [formControlName]="i" class="form-control">
+            </div>            
+            <div class="col-sm-4">
+                <a class="btn btn-success" (click)="addMore()">Add More</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="div form-group">
+        <div class="col">
+            <button class="btn btn-info" [disabled]="itemEntryForm.invalid">Save</button>
+        </div>
+    </div>
+</form>
+<div *ngIf="isSubmitted">
+    <app-item-detail [item]="newItem"></app-item-detail>
+</div>
