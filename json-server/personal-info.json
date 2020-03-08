@@ -26,6 +26,33 @@
       "mobileNo": "9879534778",
       "email": "vinit2cute@gmail.com",
       "city": "surat"
+    },
+    {
+      "id": "4",
+      "firstName": "ami",
+      "lastName": "thakor",
+      "gender": "F",
+      "mobileNo": "8600712124",
+      "email": "dave.12@gmail.com",
+      "city": "bharuch"
+    },
+    {
+      "id": "54",
+      "firstName": "piyush",
+      "lastName": "patel",
+      "gender": "M",
+      "mobileNo": "9898121234",
+      "email": "piyush@gmail.com",
+      "city": "bardoli"
+    },
+    {
+      "id": "24",
+      "firstName": "darsh",
+      "lastName": "patel",
+      "gender": "M",
+      "mobileNo": "9898712121",
+      "email": "darsh.hy@gmail.com",
+      "city": "kamrej"
     }
   ]
 }

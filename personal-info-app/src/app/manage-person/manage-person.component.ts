@@ -11,7 +11,10 @@ import { Person } from './person.model';
 })
 export class ManagePersonComponent implements OnInit {
 
-  personList : Person[] = []
+  person : Person  = new Person(0);
+  personList : Person[] = [];
+  isLoaded : boolean = false;
+  saveStatus : boolean = false;
 
   constructor(private personalInfoService : PersonalInfoService,private loggingService : LoggingService) { 
     this.loggingService.logInfo("PersonalInfo Component Object Created");
@@ -27,12 +30,30 @@ export class ManagePersonComponent implements OnInit {
       (data)=>{
         console.log(data);
         this.personList = data;
+        this.isLoaded = true;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
+  }
+
+  getSaveStatus(status) : void{
+    this.saveStatus = status;    
+    if(this.saveStatus){
+      this.getPersonList();
+    }
+  }
+
+  edit(personId : number) : void {
+    this.personalInfoService.getPersonById(personId).subscribe(
+      (data)=>{
+        this.person = data;
       },
       (error)=>{
 
       }
     )
   }
-
 }
 
