@@ -6,7 +6,7 @@ import { Person } from './person.model';
 @Injectable({
   providedIn: 'root'
 })
-export class PersonalInfoService {
+export class PersonService {
 
   appUrl : string = 'http://localhost:3000/personList';
 
@@ -18,17 +18,5 @@ export class PersonalInfoService {
 
   getPersonById(id : number) : Observable<Person>{
     return this.httpClient.get<Person>(this.appUrl+"/"+id);
-  }
-
-  updatePerson(person : Person) : Observable<Person>{
-    return this.httpClient.put<Person>(this.appUrl+"/"+person.id,person);
-  }
-
-  save(person : Person) : Observable<Person>{
-    return this.httpClient.post<Person>(this.appUrl,person);
-  }
-
-  deletePersonById(id : number) : Observable<void>{
-    return this.httpClient.delete<void>(this.appUrl+"/"+id);
   }
 }

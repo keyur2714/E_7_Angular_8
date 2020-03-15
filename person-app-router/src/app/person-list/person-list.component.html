@@ -1,0 +1,27 @@
+<button class="btn btn-secondary" (click)="back()">Back</button>
+<table class="table table-bordered bg-dark text-warning">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>Mobile No</th>
+            <th>Email</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of personList">
+            <td>
+                <a [routerLink]="['/person-detail',person.id,'sachin']">{{person.id}}</a>
+            </td>
+            <td>{{person.firstName}}</td>
+            <td>{{person.lastName}}</td>
+            <td>{{person.city}}</td>
+            <td>{{person.mobileNo}}</td>
+            <td>{{person.email}}</td>            
+            <td>{{person.gender}}</td>            
+        </tr>
+    </tbody>
+</table>

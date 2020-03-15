@@ -55,5 +55,21 @@ export class ManagePersonComponent implements OnInit {
       }
     )
   }
+
+  delete(personId : number) : void {
+    let confirmMsg = confirm("Are you sure want to delete person with id "+personId);
+    //alert(confirmMsg);
+    if(confirmMsg){
+      this.personalInfoService.deletePersonById(personId).subscribe(
+        (data)=>{
+          alert("Person Deleted Successfully with id "+personId);
+          this.getPersonList();
+        },
+        (error)=>{
+
+        }
+      )
+    }
+  }
 }
 

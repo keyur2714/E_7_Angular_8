@@ -25,7 +25,8 @@
                 <td>{{person.email}}</td>
                 <td>{{person.city}}</td>
                 <td>
-                    <button class="btn btn-success" (click)="edit(person.id)">Edit</button>
+                    <button class="btn btn-success m-1" (click)="edit(person.id)">Edit</button>
+                    <button class="btn btn-danger m-1" (click)="delete(person.id)">Delete</button>
                 </td>
             </tr>
         </tbody>
