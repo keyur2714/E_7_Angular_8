@@ -4,7 +4,7 @@
       "id": 27,
       "firstName": "keyursinh",
       "lastName": "Thakor",
-      "gender": "Male",
+      "gender": "M",
       "mobileNo": "7387029671",
       "email": "keyurjava27@gmail.com",
       "city": "pune"
@@ -13,7 +13,7 @@
       "id": 26,
       "firstName": "denish",
       "lastName": "patel",
-      "gender": "Male",
+      "gender": "M",
       "mobileNo": "9898012124",
       "email": "denishjava26@gmail.com",
       "city": "mumbail"
@@ -22,7 +22,7 @@
       "id": 44,
       "firstName": "vinit",
       "lastName": "shah",
-      "gender": "Male",
+      "gender": "M",
       "mobileNo": "9879534778",
       "email": "vinit2cute@gmail.com",
       "city": "surat"

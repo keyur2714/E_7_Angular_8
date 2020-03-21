@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import { ManagePersonComponent } from './manage-person/manage-person.component';
 import { PersonListComponent } from './person-list/person-list.component';
 import { PersonService } from './person.service';
 import { PersonDetailComponent } from './person-detail/person-detail.component';
+import { PersonEntryComponent } from './person-entry/person-entry.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,14 @@ import { PersonDetailComponent } from './person-detail/person-detail.component';
     ContactUsComponent,
     ManagePersonComponent,
     PersonListComponent,
-    PersonDetailComponent
+    PersonDetailComponent,
+    PersonEntryComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [PersonService],

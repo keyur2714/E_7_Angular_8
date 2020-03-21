@@ -19,4 +19,16 @@ export class PersonService {
   getPersonById(id : number) : Observable<Person>{
     return this.httpClient.get<Person>(this.appUrl+"/"+id);
   }
+
+  save(person : Person) : Observable<Person>{
+    return this.httpClient.post<Person>(this.appUrl,person);
+  }
+
+  update(person : Person) : Observable<Person>{
+    return this.httpClient.put<Person>(this.appUrl+"/"+person.id,person);
+  }
+
+  delete(id : number) : Observable<void>{
+    return this.httpClient.delete<void>(this.appUrl+"/"+id);
+  }
 }

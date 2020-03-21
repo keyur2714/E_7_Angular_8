@@ -1,4 +1,6 @@
-<button class="btn btn-secondary" (click)="back()">Back</button>
+
+<button class="btn btn-secondary m-1" (click)="back()">Back</button>
+<button class="btn btn-info m-1" (click)="addPerson()">Add</button>
 <table class="table table-bordered bg-dark text-warning">
     <thead>
         <tr>
@@ -9,19 +11,28 @@
             <th>Mobile No</th>
             <th>Email</th>
             <th>Gender</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let person of personList">
             <td>
                 <a [routerLink]="['/person-detail',person.id,'sachin']">{{person.id}}</a>
+                <button class="btn btn-info m-1" [routerLink]="['detail',person.id,'sachin']">Same Page</button>
             </td>
             <td>{{person.firstName}}</td>
             <td>{{person.lastName}}</td>
             <td>{{person.city}}</td>
             <td>{{person.mobileNo}}</td>
             <td>{{person.email}}</td>            
-            <td>{{person.gender}}</td>            
+            <td>{{person.gender === 'M' ? 'Male' : 'Female'}}</td>            
+            <td>
+                <button class="btn btn-success m-1" (click)="edit(person.id)">Edit</button>
+                <button class="btn btn-danger m-1" (click)="delete(person.id)">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>
+<div>
+        <router-outlet></router-outlet>
+</div>
