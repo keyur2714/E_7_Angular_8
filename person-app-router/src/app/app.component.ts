@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './auth/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'person-app-router';
+  isLoggedIn : boolean = false;
+
+  constructor(private authService : AuthenticationService){
+  }
+
+  checkLoggedin() : void{
+    this.isLoggedIn = this.authService.isLoggedIn;
+  }
 }

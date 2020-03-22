@@ -12,6 +12,10 @@ import { PersonListComponent } from './person-list/person-list.component';
 import { PersonService } from './person.service';
 import { PersonDetailComponent } from './person-detail/person-detail.component';
 import { PersonEntryComponent } from './person-entry/person-entry.component';
+import { AuthenticationService } from './auth/authentication.service';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AuthGuardService } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { PersonEntryComponent } from './person-entry/person-entry.component';
     ManagePersonComponent,
     PersonListComponent,
     PersonDetailComponent,
-    PersonEntryComponent
+    PersonEntryComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,7 @@ import { PersonEntryComponent } from './person-entry/person-entry.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [PersonService],
+  providers: [PersonService,AuthenticationService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

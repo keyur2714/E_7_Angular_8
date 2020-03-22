@@ -15,13 +15,19 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="'contactus'" [routerLinkActive]="'active'">Contact US</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'login'" [routerLinkActive]="'active'" *ngIf="! isLoggedIn">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'logout'" [routerLinkActive]="'active'" *ngIf="isLoggedIn">Sign Out</a>
+          </li>
         </ul>
       </nav>
     </div>
   </div>  
   <div class="row">    
     <div class="col">
-      <router-outlet></router-outlet>
+      <router-outlet (activate)="checkLoggedin()"></router-outlet>
     </div>
   </div>
 </div>
