@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
           alert("Invalid Username or password.");
         }else{
           this.authService.isLoggedIn = true;
+          sessionStorage.setItem("loggedInUser",JSON.stringify(data));
+          sessionStorage.setItem("token",data.token);
           this.router.navigate([this.authService.successPage]);
         }        
       }

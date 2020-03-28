@@ -13,6 +13,8 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit() {
     this.authService.successPage = 'home';
+    sessionStorage.removeItem("loggedInUser");
+    sessionStorage.removeItem("token");
     this.authService.isLoggedIn = false;
     this.router.navigate(['login']);
   }

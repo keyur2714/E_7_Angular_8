@@ -17,6 +17,8 @@ export class PersonService {
   }
 
   getPersonById(id : number) : Observable<Person>{
+    //let token = sessionStorage.getItem("token");
+    //return this.httpClient.get<Person>(this.appUrl+"/"+id,{'headers' : {'Authorization': 'Berear '+token}});
     return this.httpClient.get<Person>(this.appUrl+"/"+id);
   }
 

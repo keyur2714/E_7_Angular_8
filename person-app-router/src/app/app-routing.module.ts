@@ -14,11 +14,12 @@ import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
   {path : 'home',component : HomeComponent},
-  {path : 'aboutus',component : AboutUsComponent, canActivate : [AuthGuardService]},
+  {path : 'aboutus',component : AboutUsComponent, canActivate : [AuthGuardService]},//called when any link is clicked and check if it's logged in or not.
   {path : 'contactus',component : ContactUsComponent, canActivate : [AuthGuardService]},
   {path : 'manageperson',component : ManagePersonComponent , canActivate : [AuthGuardService]},
   {
     path : 'person-list',component : PersonListComponent,
+    canActivateChild : [AuthGuardService], //called when child route link is clicked.
     children : [
       {
         path : 'detail/:id/:name',component : PersonDetailComponent
