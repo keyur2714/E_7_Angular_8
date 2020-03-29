@@ -1,0 +1,30 @@
+<button class="btn btn-secondary p-2" (click)="back()">Back</button>
+<div class="card bg-secondary text-warning">
+    <div class="card-header">
+        Person Details of {{person.id}}
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <td>{{person.lastName}}, {{person.firstName}}</td>
+            </tr>
+            <tr>
+                <th>City</th>
+                <td>{{person.city}}</td>
+            </tr>
+            <tr>
+                <th>Mobile No</th>
+                <td>{{person.mobileNo}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{person.email}}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{person.gender === 'M' ? 'Male' : 'Female'}}</td>    
+            </tr>
+        </table>
+    </div>
+</div>

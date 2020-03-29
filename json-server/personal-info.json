@@ -1,21 +1,21 @@
 {
-  "users" : [
-	{
-		"id" : 1,
-		"username" : "keyur",
-		"name" : "keyur thakor",
-		"password" : "India@123",
-		"role" : "ADMIN",
-		"token" : "abcd1234444"
-	},
-	{
-		"id" : 2,
-		"username" : "denish",
-		"name" : "denish patel",
-		"password" : "Bharat@123",
-		"role" : "USER",
-		"token" : "ABCD1234444"		
-	}
+  "users": [
+    {
+      "id": 1,
+      "username": "keyur",
+      "name": "keyur thakor",
+      "password": "India@123",
+      "role": "ADMIN",
+      "token": "abcd1234444"
+    },
+    {
+      "id": 2,
+      "username": "denish",
+      "name": "denish patel",
+      "password": "Bharat@123",
+      "role": "USER",
+      "token": "ABCD1234444"
+    }
   ],
   "personList": [
     {
