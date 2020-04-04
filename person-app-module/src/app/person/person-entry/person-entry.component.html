@@ -18,7 +18,8 @@
             <input type="text" name=firstName formControlName="firstName" [(ngModel)]="person.firstName" class="form-control">
         </div>
         <div class="col-sm-4" *ngIf="personEntryForm.get('firstName').invalid && personEntryForm.get('firstName').touched">
-            First Name is Mandatoty Field.
+            <span *ngIf="personEntryForm.get('firstName').errors['required']">First Name is Mandatoty Field.</span>
+            <span *ngIf="personEntryForm.get('firstName').errors['invalidName']">Invalid Name (keyur / denish).</span>
         </div>        
     </div>
     <div class="row form-group">

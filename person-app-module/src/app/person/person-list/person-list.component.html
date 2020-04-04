@@ -1,6 +1,7 @@
 
 <button class="btn btn-secondary m-1" (click)="back()">Back</button>
-<button class="btn btn-info m-1" (click)="addPerson()">Add</button>
+<!-- <button class="btn btn-info m-1" (click)="addPerson()">Add</button> -->
+<button class="btn btn-info m-1" [routerLink]="['add-person']">Add</button>
 <table class="table table-bordered bg-dark text-warning">
     <thead>
         <tr>

@@ -32,7 +32,8 @@ export class PersonListComponent implements OnInit {
   }
 
   addPerson() : void{
-    this.router.navigate(['/add-person']);
+    this.router.navigate(['add-person']);// without lazy loading
+    //this.router.navigate(['/manage-person/add-person']);
   }
 
   delete(id:number) : void {

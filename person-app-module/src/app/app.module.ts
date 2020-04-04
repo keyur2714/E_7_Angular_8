@@ -22,7 +22,7 @@ import { PageNotFoundComponent } from './page-notfound.component';
     HttpClientModule,    
     FormsModule,    
     MainModule,
-    PersonModule,    
+    //PersonModule,    //when Eager Loding..
     AuthModule,
     AppRoutingModule
   ],

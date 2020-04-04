@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Person } from '../person.model';
 import { PersonService } from '../person.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -42,7 +42,7 @@ export class PersonEntryComponent implements OnInit {
     this.personEntryForm = this.formBuilder.group(
       {
         id : ['',Validators.required],
-        firstName : ['',Validators.required],
+        firstName : ['',[Validators.required,this.checkValidNames.bind(this)]],
         lastName : ['',Validators.required],
         gender : [''],
         mobileNo : ['',Validators.required],
@@ -52,7 +52,15 @@ export class PersonEntryComponent implements OnInit {
     )
   }
 
+  checkValidNames(control : FormControl) : any {
+    if(control.value === 'keyur' || control.value === 'denish'){
+      return {"invalidName" : "Name is Invalid"};
+    }
+    return null;
+  }
+
   save():void{
+    console.log(this.personEntryForm);
     if(this.personEntryForm.valid){
       this.person = this.personEntryForm.value;
       this.personService.save(this.person).subscribe(
