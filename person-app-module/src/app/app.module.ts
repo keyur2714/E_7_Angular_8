@@ -28,7 +28,7 @@ import { PageNotFoundComponent } from './page-notfound.component';
   ],
   providers: [    
     AuthenticationService,
-    AuthGuardService,
+    AuthGuardService,    
     {
       provide : HTTP_INTERCEPTORS , useClass : AuthInterceptor,multi : true
     }

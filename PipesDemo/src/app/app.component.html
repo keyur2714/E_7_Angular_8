@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2>{{name | uppercase | lowercase }}</h2>
+    </div>
+    <div class="col">
+      <p>{{today | date : 'dd/MMM/yy hh:mm:ss a'}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{person | json}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{n}}
+    </div>
+    <div class="col">
+      <button class="btn btn-info" (click)="stop()">Stop</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{numObservable | async}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{name | welcome}}
+    </div>
+    <div class="col">
+      {{person.name | welcome}}
+    </div>
+    <div class="col">
+      {{'Sachin' | welcome}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Account No : {{person.accountNumber | mask : '#' : 4}}
+    </div>
+    <div class="col">
+      Mobile No : {{person.mobileNo | mask : '*' : 3 }}
+    </div>
+  </div>
+</div>
