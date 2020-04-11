@@ -49,7 +49,7 @@
 		- Delete
 	9. Session Storage/Local Storage & Cookie Understanding - 
 	- Object Parsing.
-	10. JWT Introductin -  
+	10. JWT Introductin -  -- Node JS -- 
 	11. Interceptor in HttpClientModule with Login Authentication -
 	12.Router - For Navigation	- 
 	13.Route Guards - for Authorizations -  
