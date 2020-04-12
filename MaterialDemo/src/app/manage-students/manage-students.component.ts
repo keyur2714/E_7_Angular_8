@@ -39,7 +39,7 @@ export class ManageStudentsComponent implements AfterViewInit, OnInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   
   ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.students);
+    this.dataSource = new MatTableDataSource(this.students);    
   }
 
   ngAfterViewInit() {

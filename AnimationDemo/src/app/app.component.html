@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>        
+    <div class="col">
+      <button class="btn btn-info" (click)="toggleState()">Change State</button>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <div style="width:100px;height:100px" [@stateTrigger]="state">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <table class="table bordered" [@onOffTrigger]="onOffState">
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let nm of studentNames">
+            <td>{{nm}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
