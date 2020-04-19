@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Angular 8 Highcharts Demo </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header bg-warning text-info">
+              Line Chart
+            </div>
+            <div class="card-body">
+                <highcharts-chart
+                [Highcharts] = "highcharts" 
+                [options] = "chartOptionsLine" 
+                style = "width: 100%; height: 400px; display: block;">
+              </highcharts-chart> 
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header bg-warning text-info">
+              Bar Chart
+            </div>
+            <div class="card-body">
+                <highcharts-chart
+                [Highcharts] = "highcharts" 
+                [options] = "chartOptionsBar" 
+                style = "width: 100%; height: 400px; display: block;">
+              </highcharts-chart>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-warning text-info">
+          Pie Chart
+        </div>
+        <div class="card-body">
+          <highcharts-chart
+            [Highcharts] = "highcharts" 
+            [options] = "chartOptionsPie" 
+            style = "width: 100%; height: 300px; display: block;">
+          </highcharts-chart>
+        </div>
+      </div>      
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-header bg-warning text-info">
+              Column Chart
+            </div>
+            <div class="card-body">
+                <highcharts-chart
+                [Highcharts] = "highcharts" 
+                [options] = "chartOptionsColumn" 
+                style = "width: 100%; height: 400px; display: block;">
+              </highcharts-chart>
+            </div>      
+    </div>
+  </div>
+</div>
+
+   
