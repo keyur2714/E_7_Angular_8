@@ -1,0 +1,11 @@
+<p>
+    <button mat-raised-button color="warn" [routerLink]="'/user/add-item'">Add Item</button>
+    <button mat-raised-button color="primary" (click)="editItem()">Edit Item</button>
+</p>
+<h1>Manage Items</h1>    
+<p>
+    <button mat-raised-button color="primary" [routerLink]="'item-detail'">Item-Detail</button>
+</p>
+<div>
+    <router-outlet></router-outlet>
+</div>
